@@ -24,14 +24,14 @@ def omlet(request):
     servings = request.GET.get("servings")
     if servings == None:
         context = {
-            'recipe': DATA['omlet']
+            'recipe': DATA['omlet'], 'name': 'Омлет'
         }
     else:
         dic = {}
         for key, value in DATA['omlet'].items():
             dic[key] = value * int(servings)
         context = {
-                'recipe': dic
+                'recipe': dic, 'name': 'Омлет'
             }
     return render(request, 'calculator/index.html', context)
 
@@ -39,14 +39,14 @@ def pasta(request):
     servings = request.GET.get("servings")
     if servings == None:
         context = {
-            'recipe': DATA['pasta']
+            'recipe': DATA['pasta'], 'name': 'Паста'
         }
     else:
         dic = {}
         for key, value in DATA['pasta'].items():
             dic[key] = value * int(servings)
         context = {
-            'recipe': dic
+            'recipe': dic, 'name': 'Паста'
         }
     return render(request, 'calculator/index.html', context)
 
@@ -54,14 +54,14 @@ def buter(request):
     servings = request.GET.get("servings")
     if servings == None:
         context = {
-            'recipe': DATA['buter']
+            'recipe': DATA['buter'], 'name': 'Бутерброт'
         }
     else:
         dic = {}
         for key, value in DATA['buter'].items():
             dic[key] = value * int(servings)
         context = {
-            'recipe': dic
+            'recipe': dic, 'name': 'Бутерброт'
         }
     return render(request, 'calculator/index.html', context)
 
